@@ -107,7 +107,7 @@
 	          </div><input class="form-control" id="name" name="textinput" type="text" value="" placeholder="Name" required>
 	          <div class="input-group-append">
 	            <div class="input-group-text">
-	              <span class="input-group" id="nameChars">25</span> 
+	              <span class="input-group" id="nameChars">25</span>
 	            </div>
 	          </div>
 	        </div>
@@ -120,7 +120,7 @@
 	          </div><input class="form-control" id="message" name="textinput" type="text" value="" placeholder="message" style="outline: 0">
 	          <div class="input-group-append">
 	            <div class="input-group-text">
-	              <span class="input-group" id="messageChars">255</span> 
+	              <span class="input-group" id="messageChars">255</span>
 	            </div>
 	          </div>
 
@@ -135,7 +135,7 @@
 	    </div><br>
 
 		<button class="btn btn-primary btn-block btn-lg" id="encode" data-method="encode">Encode</button>
-		
+
 	</div>
 </body>
 <script type="text/javascript">
@@ -143,13 +143,13 @@ function encode(name, message)
 {
 	var resultNode = document.getElementById("result");
 	resultNode.innerHTML = "";
-	encodedMessage = ascii_to_hexa("{'name': '" + name + "','message': '" + message + "'}")
+	encodedMessage = ascii_to_hexa('{"name": "' + name + '","message": "' + message + '"}')
 	resultNode.innerHTML = encodedMessage
 }
 function ascii_to_hexa(str)
   {
 	var arr1 = [];
-	for (var n = 0, l = str.length; n < l; n ++) 
+	for (var n = 0, l = str.length; n < l; n ++)
      {
 		var hex = Number(str.charCodeAt(n)).toString(16);
 		arr1.push(hex);
@@ -169,7 +169,7 @@ function buttonClicked()
     console.log($("#name").val());console.log(FormName);return};
     if (message.length > 255) {resultNode.innerHTML = "Message too long! Max is 255 Chars";return};
 	if (FormName.length > 25) {resultNode.innerHTML = "Name too long! Max is 26 Chars";return};
-	
+
 
     encode(FormName, FormMessage);
 }
@@ -197,4 +197,3 @@ $('#name').keyup(function() {
 });
 </script>
 </html>
-
